@@ -20,8 +20,6 @@ jobs:
   print_hello:
     docker:
       - image: circleci/node:13.8.0
-    environment:
-      env_var: binh
     steps:
       - run:
           command: "echo hello"
@@ -39,7 +37,7 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
+      # - say-hello
       - print_hello
       - print_world:
           requires:
