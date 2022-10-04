@@ -24,8 +24,7 @@ jobs:
     steps:
       - run:
           command: |
-            VAR_B="binh"
-            echo $VAR_B
+            echo hello 123123
 
   print_world:
     docker:
