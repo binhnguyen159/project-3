@@ -63,6 +63,20 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - print_pipeline_id
+      
+  job_failure:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run:
+          command: echo "Hello 1"
+      - run:
+          command: echo "hello 2"
+      - run:
+          name: on error
+          command: echo "hello 3333"
+          when: on_fail
+  
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
