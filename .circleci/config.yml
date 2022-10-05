@@ -33,6 +33,27 @@ jobs:
       - run:
           command: |
             echo world
+            
+  save_hello_world_output:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run:
+          name: "Exercise Sharing Files"
+          command: 'echo "text to output here" > output.txt'
+      - persist_to_workspace:
+          root: .     # relative path to our working directory
+          paths:      # file globs which will be persisted to the workspace
+           - rand_*
+
+  print_output_file:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - attach_workspace:
+          at: output.txt
+      - run:
+          command: "cat output.txt"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
