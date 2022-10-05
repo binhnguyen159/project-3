@@ -71,7 +71,10 @@ jobs:
       - run:
           command: echo "Hello 1"
       - run:
-          command: echo "hello 2"
+          command: |
+            echo hello 2
+            exit 1
+          
       - run:
           name: on error
           command: echo "hello 3333"
@@ -93,4 +96,5 @@ workflows:
           requires:
             - save_hello_world_output
       - my_job
+      - job_failure
 
