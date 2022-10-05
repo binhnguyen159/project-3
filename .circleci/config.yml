@@ -68,16 +68,12 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run:
-          command: echo "Hello 1"
-      - run:
-          command: |
-            echo hello 2
-            exit 1
+      - run:  echo "Hello 1"
+      - run:  exit 1
           
       - run:
           name: on error
-          command: echo "hello 3333"
+          command: echo hello 3333
           when: on_fail
   
 
