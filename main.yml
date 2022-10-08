@@ -1,6 +1,6 @@
 ---
 - name: infrastructure
-  hosts: localhost
+  hosts: ubuntu
   user: ubuntu
   become: true
   become_method: true
