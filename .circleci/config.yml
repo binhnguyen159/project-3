@@ -24,7 +24,7 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
-      - add_ssh_key:
+      - add_ssh_keys:
           fingerprints: ["5a:7c:c5:60:c6:84:2a:45:cb:6d:9a:02:09:49:e2:5a"]
       - run:
           name: Install ansible
@@ -39,6 +39,6 @@ workflows:
   name_workflow:
     jobs:
       # - create_infrastructure
-      - configure_infrastructure:
+      - configure_infrastructure
         # requires:
         #   create_infrastructure
