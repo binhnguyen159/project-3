@@ -1,0 +1,9 @@
+---
+- name: infrastructure
+  hosts: localhost
+  user: ubuntu
+  become: true
+  become_method: true
+  become_user: root
+  roles:
+    - setup
