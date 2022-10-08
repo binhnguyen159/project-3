@@ -11,7 +11,7 @@ Resources:
       KeyName: project3
       # Change this, as applicable to you
       # You may need to find out what instance types are available in your region - use https://cloud-images.ubuntu.com/locator/ec2/
-      ImageId: "ami-0a27b67a2d7174b09"
+      ImageId: "ami-038ff3475cbb62351"
       InstanceType: t2.micro
   InstanceSecurityGroup:
     Type: "AWS::EC2::SecurityGroup"
