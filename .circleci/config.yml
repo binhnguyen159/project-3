@@ -55,7 +55,7 @@ jobs:
           name: test roll back
           command: |
             return 1
-            - destroy_environment
+      - destroy_environment
 
 workflows:
   name_workflow:
